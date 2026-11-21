@@ -69,7 +69,7 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
 </head>
 <body>
 <header class="top"><div class="wrap">
-  <a class="brand" href="index.html"><img src="logo.jpeg" alt="شعار لجنة الطب البيطري"><span><b>المنصة الأكاديمية - VetCommitto</b><small>لجنة الطب والجراحة البيطرية</small></span></a>
+  <a class="brand" href="index.html"><img src="logo.jpeg" alt="شعار لجنة الطب البيطري" onerror="this.style.display='none'"><span><b>المنصة الأكاديمية - VetCommitto</b><small>لجنة الطب والجراحة البيطرية</small></span></a>
   <div class="tools">
     <a class="ib" href="index.html">الرئيسية</a>
     <button class="ib" id="th" aria-label="تبديل المظهر"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
@@ -143,7 +143,7 @@ function tabs(){
 function draw(){
   const v=VIEWS[cur],st=$("stage");st.textContent="";
   st.style.width="min(100%,"+v.w+"px)";
-  const img=document.createElement("img");img.src="scapula/"+v.id+".jpg";img.alt="Scapula، الجهة "+v.ar;st.append(img);
+  const img=document.createElement("img");img.src=v.id+".jpg";img.alt="Scapula، الجهة "+v.ar;st.append(img);
   v.parts.forEach((p,i)=>{const b=mk("button",null,"hs"+(i===sel?" on":""));b.style.left=p[1]+"%";b.style.top=p[2]+"%";
     b.setAttribute("aria-label",p[0]);b.onclick=()=>pick(i);st.append(b)});
   const pl=$("parts");pl.textContent="";
